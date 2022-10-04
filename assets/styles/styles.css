@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+}
+
+ul > li{
+    list-style-type: none;
+}
+
+header{
+    padding: 25px;
+    color: rgb(255, 255, 255);
+}
+
+.title{
+    color: rgb(84, 84, 134);
+    font-size: 80px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow:  
+      1px -1px 0 #2f3352, 
+      2px -2px 0 #2f3352, 
+      3px -3px 0 #2f3352, 
+      4px -4px 0 #2f3352, 
+      5px -5px 0 #2f3352, 
+      6px -6px 0 #2f3352, 
+      7px -7px 7px rgba(0, 0, 0, 0.55);
+}
+
+div.container{
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: rgb(45, 47, 68);
+}
+
+main{
+    padding-top: 25px;
+}
+
+#audiooptions{
+    width: 365px;
+    margin: 0px auto;
+}
+
+ul#sounds{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+ul#sounds > li button{
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(61, 61, 99);
+    box-shadow: 0px 0px 5px 2px rgb(37, 37, 53);
+    color: rgb(103, 103, 167);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px rgb(52, 46, 73);
+    font-family: 'Righteous', cursive;
+    overflow: hidden;
+}
+
+ul#sounds > li:hover{
+    font-size: 40px;
+    transition: 500ms font-size;
+}
+
+#btnmute{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(61, 61, 99);
+    box-shadow: 0px 0px 5px 2px rgb(37, 37, 53);
+    color: rgb(103, 103, 167);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px rgb(52, 46, 73);
+    font-family: 'Righteous', cursive;
+}
