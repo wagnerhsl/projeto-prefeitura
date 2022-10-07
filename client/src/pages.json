@@ -1,0 +1,25 @@
+{ 
+  "Principal" : ["rgb(0 200 125)", {
+    "Principal":[1, "https://www.pinhal.sp.gov.br/"],
+    "Telefones Úteis":[2, "https://www.pinhal.sp.gov.br/prefeitura/telefones/"],
+    "Álbum de fotos":[14, "https://www.pinhal.sp.gov.br/album-de-fotos"]
+  }],
+  "Saúde" : ["rgb(255 0 0)", {
+    "Assesor da Saúde":[7, "http://s42.asp.srv.br/saude/servlet/wpaspdesktop"]
+  }],
+  "Geral" : ["rgb(0 0 255)", {
+    "Sistema de chamados":[3, "http://10.10.100.5/hesk/"],
+    "WebMail":[4, "https://www.pinhal.sp.gov.br/webmail/"],
+    "Carta de Serviços":[5, "https://s11.asp.srv.br:445/ouvidoria.pm.espiritosantodopinhal.sp/servlet/com.asp.ouvidoria.externo.wpcartaservicoext"],
+    "DETRAN":[6, "https://www.detran.sp.gov.br/wps/portal/portaldetran/cidadao/home/!ut/p/z1/jc3LCsIwFATQb_ELMnkgyTLWNn0YQlu0bTaSlQS0uhC_XynFncHZDZx7h3gyEj-HV7yEZ7zP4frpk9-e6xZZWUp2cJ1RaKV1hvUMsJwMC8CPaBD_z30C-PT7gfiFcIFe7aiGzE8FtOx4QXPH0GAF3wlD9xm0EsJWdcOh-AoSI4_bcUSsNm86XtZa/dz/d5/L2dBISEvZ0FBIS9nQSEh/"],
+    "E-Sic":[9, "http://s4.asp.srv.br:8380/einformacoes.pm.espiritosantodopinhal.sp/servlet/einformacoes?"],
+    "Governo Brasileiro":[11, "https://sso.acesso.gov.br/login?client_id=contas.acesso.gov.br&authorization_id=18065c1277b"],
+    "Camara":[12, "https://www.camara.leg.br/"]
+  }],
+  "ISS" : ["rgb(0 0 255)", {
+    "ISS/NFS-E Simples":[10, "https://espiritosantodopinhal.simplissweb.com.br/contrib/Account/Login"],
+    "Autheticador de Documentos":[13, "https://s54.asp.srv.br/issonline/servlet/hautenticadocumento"],
+    "Taxas diversas":[15, "https://s54.asp.srv.br/issonline/servlet/hwwconsultadebito"],
+    "Certidão de Débitos":[8, "https://s54.asp.srv.br/issonline/servlet/hcertidaodebito"]
+  }]
+}
