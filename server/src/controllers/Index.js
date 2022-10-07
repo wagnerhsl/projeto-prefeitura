@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const dataBase = require('../models/DataBase');
 const auto = require('../models/Auto');
+const crypto = require('../models/Crypto');
 
 module.exports = new (class{
   init(req, res) {
@@ -9,10 +10,12 @@ module.exports = new (class{
   }
 
   async getimage(req, res) {
-    const {link, pageId} = req.body;
-    const dirImage = path.join(__dirname, "/..", "..", "public", "prints", pageId+".png");
+    const {link, name} = req.body;
+    const newNameFile = (name+link).replace(/[^\w\-]+/g, new String('')).slice(1, 25)+".png";
+
+    const dirImage = path.join(__dirname, "/..", "..", "public", "prints", newNameFile);
     fs.access(dirImage, fs.constants.F_OK, async err => {
-      if(err) await auto.screenshot(dirImage);
+      if(err) await auto.screenshot(dirImage, link);
       console.log(err ? "image não existe!" : "image existe!!");
     });
     res.sendFile(dirImage);
