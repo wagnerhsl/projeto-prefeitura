@@ -24,20 +24,14 @@ let IconPages = RiArrowDropDownLine;
 export const PagesStyle  = styled(({className, title, list, style}) => {
   const [stateIconPages, setStateIconPages] = useState(0);
   IconPages = stateIconPages ? RiArrowDropDownLine : RiArrowDropUpLine;
-
   return (<section {...{className}} {...{style}}>
     <h3> 
       <span>{title}</span>
-      <button onClick={() => {
-        setStateIconPages(stateIconPages ? 0 : 1);
-        console.log(stateIconPages);
-      }}>
+      <button onClick={() => setStateIconPages(stateIconPages ? 0 : 1)}>
         <IconPages/>
       </button> 
     </h3>
-    <ul style = {{
-      display: (stateIconPages ? 'none' : 'grid'),
-    }}> {list} </ul>
+    <ul style = {{display: (stateIconPages ? 'none' : 'grid')}}> {list} </ul>
   </section>);
 })`
   background-color: ${color.tres};
@@ -58,7 +52,7 @@ export const PagesStyle  = styled(({className, title, list, style}) => {
     justify-content: space-between;
     padding: 10px 25px;
     margin:  0 !important;
-    font-size: 18px;
+    font-size: 20px;
     *{color: ${color.white}}
     > button { 
       padding: 0px !important;
@@ -76,8 +70,8 @@ export const PagesStyle  = styled(({className, title, list, style}) => {
   }
   > ul {
     display: grid;
-    gap: 20px;
-    padding: 40px;
+    gap: 40px;
+    padding: 20px 30px;
     ${mq[0]} {
       gap: 25px;
     }
@@ -95,7 +89,7 @@ const PageSt = styled(motion.li)`
     &, *{color: ${color.white}};
     > a {
       font-family: ${font.Source};
-      font-size: 10px;
+      font-size: 12.5px;
       font-weight: bolder;
       text-transform: uppercase;
     }
@@ -120,7 +114,7 @@ export const PageSt1 = styled(PageSt)`
       ${mq[0]} {min-height: 12rem}
     }
     > p.name {
-      margin: 7.5px 0px 10px 0px;
+      margin-top: 12.5px;
     }
   }
 `;
