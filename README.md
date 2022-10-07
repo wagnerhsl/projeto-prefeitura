@@ -36,7 +36,6 @@ Princípais ferramentas usadas para a construção deste aplicação.
 
 ### 🧮 Tecnologias
 
-Softwares e sistemas online utilizadas
 [![My Skills](https://skills.thijs.gg/icons?i=figma,git,html,js,mongodb,nodejs,react&theme=dark)](https://skills.thijs.gg)
 
 ### 🚀 Configurações do ambiente de produção
