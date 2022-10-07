@@ -21,11 +21,11 @@ export const SectionTitle = styled.section`
 
 let IconPages = RiArrowDropDownLine;
 
-export const PagesStyle  = styled(({className, title, list, style}) => {
+export const PagesStyle  = styled(({className, title, list, background, style}) => {
   const [stateIconPages, setStateIconPages] = useState(0);
   IconPages = stateIconPages ? RiArrowDropDownLine : RiArrowDropUpLine;
   return (<section {...{className}} {...{style}}>
-    <h3> 
+    <h3 style={{background}}> 
       <span>{title}</span>
       <button onClick={() => setStateIconPages(stateIconPages ? 0 : 1)}>
         <IconPages/>
