@@ -36,7 +36,7 @@ Princípais ferramentas usadas para a construção deste aplicação.
 
 ### 🧮 Tecnologias
 
-[![My Skills](https://skills.thijs.gg/icons?i=figma,git,html,js,mongodb,nodejs,react&theme=dark)](https://skills.thijs.gg)
+[![My Skills](https://skills.thijs.gg/icons?i=emotion,express,figma,git,github,html,js,mongodb,nginx,nodejs,react,vscode&theme=dark)](https://skills.thijs.gg)
 
 ### 🚀 Configurações do ambiente de produção
 
@@ -45,3 +45,5 @@ O ambiente de produção se refere em qual servidor está rodando o software em 
 1. Node.js - Responsável por rodar o JavaScript no backend e frontend;
 2. PM2 - Destinado a gerenciar o processos do servidor;
 3. Nginx - Responsável por encaminhar as requisições feitas ao servidor.
+
+
