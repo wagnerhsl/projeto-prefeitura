@@ -1,5 +1,4 @@
 {
-  "homepage": "client/build/",
   "scripts": {
     "server": "node ./server/server.js",
     "client": "cd client && npm start",
