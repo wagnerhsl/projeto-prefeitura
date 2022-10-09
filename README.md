@@ -24,7 +24,7 @@ Princípais funções que atualmente o administrador possui:
 
 - [ ] Editar, Remover ou Adicionar novos conjuntos de "websites", ou apenas novas páginas;
 - [ ] Atualizar as imagens presentes na página;
-- [ ] Adicionar e Editar artigos informativos;
+- [ ] Adicionar e Editar artigos informativos.
 
 ## 🧀 Pré-requisitos para uso
 
@@ -46,4 +46,7 @@ O ambiente de produção se refere em qual servidor está rodando o software em 
 2. PM2 - Destinado a gerenciar o processos do servidor;
 3. Nginx - Responsável por encaminhar as requisições feitas ao servidor.
 
+## 🎨 Design de interface
+
+[Link da interface planejada no figma](https://www.figma.com/file/S3PdwNp3CxY8I6MFF2LYlI/Pinhal-T.I.?node-id=0%3A1)
 
