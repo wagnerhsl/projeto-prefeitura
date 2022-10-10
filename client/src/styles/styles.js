@@ -1,16 +1,33 @@
 import styled, {createGlobalStyle} from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
+  html {scroll-behavior: smooth}
+  :target {scroll-margin-top: .8em}
+  ul {list-style-type: none}
+
+  * {
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+  }
+
+  button {
+    background: transparent;
+    display: flex;
+  }
 `;
 
-const size = {
+export const size = {
   mini: 2,
   small: 4,
   big: 6,
   large: 10
 }
 
-const color = {
+export const color = {
   zero: "#737b8b",
   um: "rgb(29 38 54)",
   dois: "rgb(23 151 86)",
@@ -22,16 +39,12 @@ const color = {
   white: "rgb(250 250 255)",
   facebook: "hsl(214deg 89% 52%)",
   instagram: "hsl(332deg 89% 52%)",
-  light: {
-    white: "rgba(255, 255, 255, 0.7)"
-  },
+  light: "rgba(255, 255, 255, 0.7)",
   red: 'rgb(255, 0, 106)',
-  gradient: {
-    um: (c1, c2) => (`linear-gradient(90deg, ${c1} 40%, ${c2} 100%)`)
-  }
+  gradient: (c1, c2) => (`linear-gradient(90deg, ${c1} 40%, ${c2} 100%)`)
 }
 
-const font = {
+export const font = {
   Roboto: "'Roboto Mono', monospace",
   Baloo: "'Baloo Bhaijaan 2', cursive",
   Secular: "'Secular One', sans-serif",
@@ -41,7 +54,7 @@ const font = {
   Kantumruy: "'Kantumruy Pro', sans-serif"
 };
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   grid-area: ${props => props.area ? props.area : ""};
   width: 100%;
   > section { 
@@ -50,54 +63,67 @@ const Wrapper = styled.div`
   }
 `;
 
-const AppStyle = styled.div`
-  * {
-    border: none;
-    border-radius: 0px;
-    box-shadow: none;
-    padding: 0px;
-    text-decoration: none;
-  }
-
-  ul {
-    list-style-type: none;
-  }
-
-
-  button {
-    background: transparent;
-    display: flex;
-  }
-
-  :target {
-    scroll-margin-top: .8em;
-  }
-
-  h2 {
-    font-family: ${font.Kantumruy};
-    font-size: 23px;
-    word-spacing: 1px;
-    margin-bottom: 40px !important;
-  }
-
-  h3 {
-    font-family: ${font.Kantumruy};
-    font-size: 20px;
-    font-weight: bolder;
-    margin-bottom: 30px;
-    text-align: left;
-  }
-
-  background: ${props => props.bg};
-  box-sizing: border-box;
-  min-height: 100vh;
-  display: grid;
-  grid-template-areas: 'header' 'main' 'footer';
-  grid-template-rows: min-content auto min-content;
+export const h2 = `
+  font-family: ${font.Kantumruy};
+  font-size: 23px;
+  word-spacing: 1px;
+  margin-bottom: 40px !important;
 `;
 
+export const h3 = `
+  font-family: ${font.Kantumruy};
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+  text-align: left;
+`;
+
+export const btn = `
+  align-items: center;
+  background-color: ${color.green};
+  border-radius: 30px;
+  color: ${color.white};
+  display: flex;
+  font-family: ${font.Roboto};
+  font-weight: bolder;
+  padding: 10px;
+  min-width: 100px;
+`;
+
+export const H2 = styled.h2`${h2}`;
+export const H3 = styled.h3`${h3}`;
 const breakpoints = [620, 900, 800, 1000, 720, 1150, 950, 310];
-const mq =  breakpoints.map(bp => `@media (max-width: ${bp}px)`);
+export const mq =  breakpoints.map(bp => `@media (max-width: ${bp}px)`);
 
+export const BoxMarking = styled(({className, style, nome, pertence, type}) => {
+  const nomeLowerCase = (nome[0].toLowerCase()+nome.slice(1)).normalize("NFD");
+  return (<div {...{className, style}}>
+    <input type={type} value="Conjuntos" name={pertence} id={nomeLowerCase}/>
+    <label for={nomeLowerCase}>{nome}</label>
+    <span/>
+  </div>);
+})`
+  ${btn}
+  background-color: ${color.quatro};
+  margin-bottom: 10px;
+  > label {margin: 0px auto;}
+  > span {
+    border-radius: 100%;
+    height: 15px;
+    position: absolute;
+    width: 15px;
+  }
+  > input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 5;
+  }
+  input:checked ~ span {background-color: ${color.um}}
+  input ~ span {background-color: ${color.white}}
+`;
 
-export {styled, GlobalStyle, Wrapper, AppStyle, size, color, font, mq};
+export const BoxRadio = (props)=> <BoxMarking {...{...props, type: "radio"}}/>;
+export const BoxCheck = (props)=> <BoxMarking {...{...props, type: "checkbox"}}/>;
+
+export {styled};

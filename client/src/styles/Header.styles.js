@@ -3,7 +3,7 @@ import {styled, color, font, mq} from '../styles/styles';
 export const Title  = styled('div')`
   gap: 15px;
   grid-template-columns: min-content auto;
-  color: ${color.light.white};
+  color: ${color.light};
   display: grid;
   h1 {
     font-family: Arial;  

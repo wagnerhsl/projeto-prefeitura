@@ -1,5 +1,5 @@
 import {useCookies} from 'react-cookie';
-import {color} from '../styles/styles';
+import {color, H2} from '../styles/styles';
 import ContainerPages, {PageSt, PageSt1, PageSt2, PagesStyle, PageViewerStyle, SectionTitle, SectionPages} from '../styles/Pages.styles';
 import {useEffect, useState} from 'react';
 import {motion} from 'framer-motion';
@@ -24,7 +24,7 @@ const Page  = ({name, link, stateItemPage, bg, onclick, viewerImg}) => {
     const res = await fetch(url_req, req_config);
     const url_tmp = URL.createObjectURL(await res.blob());
     setImgUrl(url_tmp);
-    console.clear();
+    // console.clear();
   }, []);
 
   PageStyle = (stateItemPage ? PageSt1 : PageSt2);
@@ -94,7 +94,7 @@ const Pages = () => {
   return[
     <ContainerPages id = "paginas" style = {{maxWidth: `1250px`, margin: "0px auto"}}>
       <SectionTitle>
-        <h2> Acessos úteis </h2>      
+        <H2> Acessos úteis </H2>      
         <button onClick = {() => setStateItemPage(stateItemPage != 0 ? 0 : 1)}><IconGrade size = {22}/></button>
       </SectionTitle>
       <SectionPages>{listPagesContainers}</SectionPages>

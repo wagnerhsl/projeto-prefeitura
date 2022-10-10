@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {motion} from 'framer-motion';
-import {styled, color, font, mq} from './styles';
+import {styled, color, font, H3, mq} from './styles';
 import {RiArrowDropUpLine, RiArrowDropDownLine, RiCloseCircleFill} from 'react-icons/ri';
 
 export const SectionTitle = styled.section`
@@ -10,7 +10,6 @@ export const SectionTitle = styled.section`
   justify-content: center;
   width: 100%;
   &, * {color: white}
-  h2 {margin: 0px}
   button {
     margin-bottom: 40px !important;
     cursor: pointer;
@@ -25,12 +24,12 @@ export const PagesStyle  = styled(({className, title, list, background, style}) 
   const [stateIconPages, setStateIconPages] = useState(0);
   IconPages = stateIconPages ? RiArrowDropDownLine : RiArrowDropUpLine;
   return (<section {...{className}} {...{style}}>
-    <h3 style={{background}}> 
+    <H3 style={{background}}> 
       <span>{title}</span>
       <button onClick={() => setStateIconPages(stateIconPages ? 0 : 1)}>
         <IconPages/>
       </button> 
-    </h3>
+    </H3>
     <ul style = {{display: (stateIconPages ? 'none' : 'grid')}}> {list} </ul>
   </section>);
 })`

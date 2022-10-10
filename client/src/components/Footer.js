@@ -1,4 +1,4 @@
-import {styled, font, color, mq} from '../styles/styles';
+import {styled, font, color, mq, H3} from '../styles/styles';
 import {BsFacebook, BsInstagram} from 'react-icons/bs';
 
 
@@ -172,7 +172,7 @@ const LastFooter  = styled(({className, area, copyright, signature}) => (
 
 export default ({maxsize}) => <FooterStyle maxsize={maxsize}>
   <FooterContacts id = 'contacts' area = 'fc'>
-    <h3> Contatos </h3>
+    <H3> Contatos </H3>
     <ul>
       <Contact info = "(3651-9698)" infoName = "Telefone da T.I"/>
       <Contact info = "cpd@pinhal.sp.gov.br" infoName = "E-mail da T.I"/>
@@ -184,14 +184,14 @@ export default ({maxsize}) => <FooterStyle maxsize={maxsize}>
     Departamento de Tecnologia.
   </MsgFooter>
   <FooterSocialMedia area = "fs">
-    <h3> Redes Socias </h3>
+    <H3> Redes Socias </H3>
     <ul>
       <SocialMedia icon = {<BsFacebook size = {26}/>} color = {color.facebook} link = "https://pt-br.facebook.com/prefeituramunicipaldeespiritosantodopinhal/"/>
       <SocialMedia icon = {<BsInstagram size = {26}/>} color = {color.instagram} link = "https://www.instagram.com/accounts/login/?next=/prefeituraespinhal/"/>
     </ul>
   </FooterSocialMedia>
   <FooterInfo area = "fi">
-    <h3> Informações </h3>
+    <H3> Informações </H3>
     <ul>
       <li><span>Horário de atendimento</span> das 7:30 à 14:30</li>
     </ul>
