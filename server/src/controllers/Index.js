@@ -22,8 +22,20 @@ module.exports = new (class{
   }
 
   async getpages(req, res) {
-    const pages = await dataBase.getpages();
-    res.end(pages);
+    let pages = await dataBase.getpages();
+    // for(let i=0;i<=pages.lenght;i++) { 
+    //   pages[i]._id = crypto.cryp(pages[i]._id);
+    // }
+    const _pages = JSON.stringify(pages);
+    res.end(_pages);
+
+  }
+
+  async removepages(req, res) {
+    const conjuntos = req.body.items_selecionados;
+    console.log(conjuntos);
+    const response = await dataBase.removeconjuntos(conjuntos);
+    res.end(response);
   }
 
   get(req, res) {

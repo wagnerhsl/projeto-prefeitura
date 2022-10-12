@@ -1,6 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const modelPages = require('./model.Pages');
+const crypto = require('./Crypto');
 
 module.exports = new (class{
   constructor() {
@@ -8,7 +9,16 @@ module.exports = new (class{
   }
 
   async getpages() {
-    const strjson = JSON.stringify(await modelPages.find({}));
+    const strjson = await modelPages.find({});
+    return strjson;
+  }
+
+  async removeconjuntos(_ids) {
+    let strjson = "";
+    for(let _id of _ids) { 
+      // _id = crypto.decryp(_id);
+      strjson = JSON.stringify(await modelPages.remove({_id}));
+    }
     return strjson;
   }
 })();

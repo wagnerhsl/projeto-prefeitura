@@ -46,13 +46,12 @@ export const PagesStyle  = styled(({className, title, list, background, style}) 
   }
   > h3 {
     align-items: center;    
-    &, *{color: ${color.white}}
     display: inline-flex;
     justify-content: space-between;
     padding: 10px 25px;
     margin:  0 !important;
     font-size: 20px;
-    *{color: ${color.white}}
+    &, *{color: ${color.white}}
     > button { 
       padding: 0px !important;
       margin: 0px !important;

@@ -95,10 +95,10 @@ export const H3 = styled.h3`${h3}`;
 const breakpoints = [620, 900, 800, 1000, 720, 1150, 950, 310];
 export const mq =  breakpoints.map(bp => `@media (max-width: ${bp}px)`);
 
-export const BoxMarking = styled(({className, style, nome, pertence, type}) => {
+export const BoxMarking = styled(({className, style, nome, pertence, type, click}) => {
   const nomeLowerCase = (nome[0].toLowerCase()+nome.slice(1)).normalize("NFD");
   return (<div {...{className, style}}>
-    <input type={type} value="Conjuntos" name={pertence} id={nomeLowerCase}/>
+    <input type={type} value="Conjuntos" name={pertence} id={nomeLowerCase} onClick={click}/>
     <label for={nomeLowerCase}>{nome}</label>
     <span/>
   </div>);
