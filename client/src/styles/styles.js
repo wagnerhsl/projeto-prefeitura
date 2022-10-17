@@ -84,7 +84,7 @@ export const btn = `
   border-radius: 30px;
   color: ${color.white};
   display: flex;
-  font-family: ${font.Roboto};
+  font-family: ${font.Kantumruy};
   font-weight: bolder;
   padding: 10px;
   min-width: 100px;
@@ -92,21 +92,67 @@ export const btn = `
 
 export const H2 = styled.h2`${h2}`;
 export const H3 = styled.h3`${h3}`;
+export const Btn = styled.button`
+  ${btn}
+  cursor: pointer;
+  justify-content: center;
+  margin: 0px auto;
+  font-size: 15px !important;
+  &:hover {
+    background-color: ${color.dois};
+  }
+`;
+export const Input = styled.input`
+  ${btn}
+  background-color: ${color.um};
+  color: ${color.facebook};
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0px auto;
+  max-width: 200px;
+`;
+export const TextArea = styled.textarea`
+  ${btn}
+  background-color: ${color.um};
+  color: ${color.facebook};
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0px auto;
+  min-width: 350px;
+`;
+export const Submit = styled(Input)`
+  background-color: transparent;
+  border: solid 2px ${color.seis};
+  color: ${color.seis};
+  font-size: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+  &:hover {
+    background-color: ${color.seis};
+    color: ${color.white};
+    transition: 1s;
+  }
+`;
+
 const breakpoints = [620, 900, 800, 1000, 720, 1150, 950, 310];
 export const mq =  breakpoints.map(bp => `@media (max-width: ${bp}px)`);
 
-export const BoxMarking = styled(({className, style, nome, pertence, type, click}) => {
+export const BoxMarking = styled(({className, style, nome, pertence, type = "radio", change, active = 1}) => {
   const nomeLowerCase = (nome[0].toLowerCase()+nome.slice(1)).normalize("NFD");
   return (<div {...{className, style}}>
-    <input type={type} value="Conjuntos" name={pertence} id={nomeLowerCase} onClick={click}/>
+    {!active ? '' : <input type={type} value="Conjuntos" name={pertence} id={nomeLowerCase} onChange={change}/>}
     <label for={nomeLowerCase}>{nome}</label>
-    <span/>
+    {!active ? '' : <span/>}
   </div>);
 })`
   ${btn}
   background-color: ${color.quatro};
-  margin-bottom: 10px;
-  > label {margin: 0px auto;}
+  > label {
+    margin: 0px auto;
+    position: relative;
+  }
   > span {
     border-radius: 100%;
     height: 15px;
@@ -114,13 +160,13 @@ export const BoxMarking = styled(({className, style, nome, pertence, type, click
     width: 15px;
   }
   > input {
+    cursor: pointer;
     position: absolute;
     opacity: 0;
-    cursor: pointer;
     z-index: 5;
   }
-  input:checked ~ span {background-color: ${color.um}}
-  input ~ span {background-color: ${color.white}}
+  input:checked ~ span {background-color: rgba(255, 255, 255, 0.27)}
+  input ~ span {background-color: white}
 `;
 
 export const BoxRadio = (props)=> <BoxMarking {...{...props, type: "radio"}}/>;

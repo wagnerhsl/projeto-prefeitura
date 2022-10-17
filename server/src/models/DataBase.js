@@ -8,8 +8,8 @@ module.exports = new (class{
     mongoose.connect(process.env.CONNSTR);
   }
 
-  async getpages() {
-    const strjson = await modelPages.find({});
+  async getpages(id={}) {
+    const strjson = await modelPages.find({...id});
     return strjson;
   }
 
@@ -19,6 +19,28 @@ module.exports = new (class{
       // _id = crypto.decryp(_id);
       strjson = JSON.stringify(await modelPages.remove({_id}));
     }
+    return strjson;
+  }
+
+  async removepages(links) {
+    let strjson = "";
+    let conjuntos = await this.getpages();
+    let pages = {};
+
+    for(let conjunto of conjuntos) {
+      let {nomes, links_pages} = Object.entries(conjunto.pages);
+      console.log(links)
+      for(let link of links) { 
+        const ref_remove = links_pages.indexOf(link);
+        if(ref_remove==-1) {
+          nomes.splice(ref_remove, 1);
+          links_pages.splice(ref_remove, 1);
+        }
+      }
+      for(let i=0;i<=nomes.lenght;i++) pages[nomes[i]] = links[i];
+      strjson = JSON.stringify(await modelPages.updateOne({pages: conjunto.pages}, {pages}));
+    }
+
     return strjson;
   }
 })();

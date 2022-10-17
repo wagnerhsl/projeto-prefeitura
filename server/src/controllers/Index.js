@@ -31,10 +31,16 @@ module.exports = new (class{
 
   }
 
-  async removepages(req, res) {
+  async removeconjuntos(req, res) {
     const conjuntos = req.body.items_selecionados;
     console.log(conjuntos);
     const response = await dataBase.removeconjuntos(conjuntos);
+    res.end(response);
+  }
+
+  async removepages(req, res) {
+    const links = req.body.items_selecionados;
+    const response = await dataBase.removepages(links);
     res.end(response);
   }
 
